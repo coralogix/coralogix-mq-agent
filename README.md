@@ -4,9 +4,9 @@
 
 This Requires AWS Lambda Function node.js v12
 
-. Upload code into lambda function.
-. Create An EventBridge Trigger for your lambda function.
-. This  Environment Variables need to be set.
+  - Upload code into lambda function.
+  - Create An EventBridge Trigger for your lambda function.
+  - This  Environment Variables need to be set.
 
 | Variable | Description |
 | -------- | ----------- |
