@@ -1,5 +1,5 @@
 # Coralogix RabbitMQ Agent
-## _Get Metrics from RabbitMQ API and Send it to Coralogix_
+# _Get Metrics from RabbitMQ API and Send it to Coralogix_
 
 ###Installation
 This Requires AWS Lambda Function node.js v12
