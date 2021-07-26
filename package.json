@@ -1,26 +1,15 @@
 {
-  "name": "coralogix-mq-agent",
-  "version": "0.0.1",
-  "description": "Coralogix agent for Rabbit MQ Metrics",
+  "name": "axio",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/coralogix/coralogix-mq-agent.git"
-  },
-  "keywords": [
-    "coralogix",
-    "rabbitmq"
-  ],
-  "author": "Juan Gimenez (juan@coralogix.com)",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/coralogix/coralogix-mq-agent/issues"
-  },
-  "homepage": "https://github.com/coralogix/coralogix-mq-agent#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "coralogix-logger": "^1.1.28"
   }
 }
