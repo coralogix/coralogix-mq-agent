@@ -121,4 +121,4 @@ exports.handler =  function(event) {
             getNodes();
             getConnections();
         };
-    };
+    }; 
