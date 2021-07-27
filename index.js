@@ -1,7 +1,9 @@
+//require('dotenv').config()
+
 var Coralogix = require("coralogix-logger");
 const axios = require('axios');
 const { LoggerConfig } = require("coralogix-logger");
-const endpoint = ['all'];
+const endpoint = ['connections'];
 const username = process.env.RABBITMQ_USERNAME;
 const password = process.env.RABBITMQ_PASSWORD;
 const rabbitUrl = process.env.RABBITMQ_FQDN;
@@ -59,17 +61,64 @@ exports.handler =  function(event) {
                 console.error(err);
             }
         };
-
-
+        const getNodes = async () => {
+            try {
+                const resp = await axios.get(rabbitUrl+'/api/nodes', {
+                    headers: {
+                'Authorization': `Basic ${token}`
+                },
+                });
+                resp.data.forEach(element => {
+                    element['endpoint'] = 'nodes';
+                    const log = new Coralogix.Log({
+                        severity: Coralogix.Severity.info,
+                        text: element    
+                        });                       
+                    //console.log(log);
+                    logger.addLog(log);
+                });  
+            } catch (err) {
+                // Handle Error Here
+                console.error(err);
+            }
+        };
+        const getConnections = async () => {
+            try {
+                const resp = await axios.get(rabbitUrl+'/api/connections', {
+                    headers: {
+                'Authorization': `Basic ${token}`
+                },
+                });
+                resp.data.forEach(element => {
+                    element['endpoint'] = 'connections';
+                    const log = new Coralogix.Log({
+                        severity: Coralogix.Severity.info,
+                        text: element    
+                        });                       
+                    //console.log(log);
+                    logger.addLog(log);
+                });  
+            } catch (err) {
+                // Handle Error Here
+                console.error(err);
+            }
+        };
         if(endpoint.includes('queues')){
             getQueues();
         };
         if(endpoint.includes('overview')){
             getOverview();
         };
-
+        if(endpoint.includes('nodes')){
+            getNodes();
+        };
+        if(endpoint.includes('connections')){
+            getConnections();
+        };
         if(endpoint.includes('all')){
             getQueues();
             getOverview();
+            getNodes();
+            getConnections();
         };
     };

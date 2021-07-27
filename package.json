@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
-    "coralogix-logger": "^1.1.28"
+    "coralogix-logger": "^1.1.28",
+    "dotenv": "^10.0.0"
   }
 }
