@@ -24,9 +24,8 @@ exports.handler =  function(event) {
         const getQueues = async () => {
             try {
                 const resp = await axios.get(rabbitUrl+'/api/queues', {
-                    headers: {
-                'Authorization': `Basic ${token}`
-                },
+                    headers: {'Authorization': `Basic ${token}`},
+                    httpsAgent: new https.Agent({ keepAlive: true })
                 });
                 resp.data.forEach(element => {
                     element['endpoint'] = 'queues';
@@ -45,9 +44,8 @@ exports.handler =  function(event) {
         const getOverview = async () => {
             try {
                 const resp = await axios.get(rabbitUrl+'/api/overview', {
-                    headers: {
-                'Authorization': `Basic ${token}`
-                },
+                    headers: {'Authorization': `Basic ${token}`},
+                    httpsAgent: new https.Agent({ keepAlive: true })
                 });
                 resp.data['endpoint'] = 'overview';
                 delete resp.data.listeners;  //Removing cause it generate bad record
@@ -64,9 +62,8 @@ exports.handler =  function(event) {
         const getNodes = async () => {
             try {
                 const resp = await axios.get(rabbitUrl+'/api/nodes', {
-                    headers: {
-                'Authorization': `Basic ${token}`
-                },
+                    headers: {'Authorization': `Basic ${token}`},
+                    httpsAgent: new https.Agent({ keepAlive: true })
                 });
                 resp.data.forEach(element => {
                     element['endpoint'] = 'nodes';
@@ -85,9 +82,8 @@ exports.handler =  function(event) {
         const getConnections = async () => {
             try {
                 const resp = await axios.get(rabbitUrl+'/api/connections', {
-                    headers: {
-                'Authorization': `Basic ${token}`
-                },
+                    headers: {'Authorization': `Basic ${token}`},
+                    httpsAgent: new https.Agent({ keepAlive: true })
                 });
                 resp.data.forEach(element => {
                     element['endpoint'] = 'connections';
