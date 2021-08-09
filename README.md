@@ -22,6 +22,7 @@ _Requirements_
 | RABBITMQ_USERNAME | Rabbit Admin UI Username |
 | RABBITMQ_PASSWORD | Rabbit Admin UI Password |
 | RABBITMQ_FQDN | Rabbit Admin UI URL |
+| AWS_NODEJS_CONNECTION_REUSE_ENABLED | 1 |
 
 
 --------------------------------------------------------------------

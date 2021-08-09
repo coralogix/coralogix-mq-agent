@@ -3,7 +3,7 @@
 var Coralogix = require("coralogix-logger");
 const axios = require('axios');
 const { LoggerConfig } = require("coralogix-logger");
-const endpoint = ['connections'];
+const endpoint = ['all'];
 const username = process.env.RABBITMQ_USERNAME;
 const password = process.env.RABBITMQ_PASSWORD;
 const rabbitUrl = process.env.RABBITMQ_FQDN;
