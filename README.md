@@ -27,4 +27,4 @@ _Requirements_
 
 --------------------------------------------------------------------
 
-This Current Version Supports Overview and Queues API. Documentation [here](https://rawcdn.githack.com/rabbitmq/rabbitmq-server/v3.8.19/deps/rabbitmq_management/priv/www/api/index.html)
+This Current Version Supports Overview, Queues, Nodes and Connections API. Documentation [here](https://rawcdn.githack.com/rabbitmq/rabbitmq-server/v3.8.19/deps/rabbitmq_management/priv/www/api/index.html)
