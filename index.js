@@ -2,6 +2,7 @@
 
 var Coralogix = require("coralogix-logger");
 const axios = require('axios');
+var https = require('https');
 const { LoggerConfig } = require("coralogix-logger");
 const endpoint = ['all'];
 const username = process.env.RABBITMQ_USERNAME;
