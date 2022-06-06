@@ -1,18 +1,23 @@
 # Coralogix RabbitMQ Agent
 ## _Get Metrics from RabbitMQ API and Send it to Coralogix_
 
+This Application is a tool to pull Metrics from Rabbit MQ Admin UI.
+
 _Requirements_
   - User with access to RabbitMQ Admin UI
   - AWS account
+  - Your User should have AWS Cli and SAM Installed and working.
   - Conectivity between AWS Lambda Functions and RabbitMQ Admin UI
   
 --------------------------------------------------------------------
 
-  1. Create a new Lambda Function in AWS.
-  2. Upload Archive.zip 
-  3. Create An EventBridge Trigger for your Lambda function. Run each Event every 1 Minute.
-  4. Set up Lambda Timeout to 5s.
-  5. Create the following Environment Variables:
+  1. Clone this repository into you Computer
+  2. Deploy the lambda
+```
+# sam build
+# sam deploy --guided
+```
+  3. Edit the following Environment Variables:
 
 | Variable | Description |
 | -------- | ----------- |
@@ -22,8 +27,18 @@ _Requirements_
 | RABBITMQ_USERNAME | Rabbit Admin UI Username |
 | RABBITMQ_PASSWORD | Rabbit Admin UI Password |
 | RABBITMQ_FQDN | Rabbit Admin UI URL |
-| AWS_NODEJS_CONNECTION_REUSE_ENABLED | 1 |
 
+If your Account is not in the EU region (the account url does not have a .com suffix)
+you will need to add this environment variable:
+```
+CORALOGIX_URL=https://<coralogix_cluster_url>/api/v1/logs
+```
+Cluster location | coralogix_cluster_url
+-----------------| --------------------
+US| api.coralogix.us
+IN| api.app.coralogix.in
+Singapore| api.coralogixsg.com
+EU2| api.eu2.coralogix.com
 
 --------------------------------------------------------------------
 
