@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^1.6.0",
     "coralogix-logger": "^1.1.28",
     "dotenv": "^10.0.0"
   }
